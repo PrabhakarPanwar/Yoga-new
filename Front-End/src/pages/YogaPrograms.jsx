@@ -54,7 +54,7 @@ const PROGRAMS = [
     ],
     faqs: [
       { q: "How long is each session?", a: "Sessions are typically 45–60 minutes, depending on your energy and availability." },
-      { q: "Can I do this online?", a: "Yes — personal sessions are available both in-person in Haridwar and via Zoom/Google Meet." },
+      { q: "Can I do this online?", a: "Yes — personal sessions are available both in-person in Bengaluru, Karnataka and via Zoom/Google Meet." },
       { q: "How soon will I see results?", a: "Most students report feeling meaningfully different within 3–4 sessions. Visible physical changes emerge around 4–6 weeks." },
       { q: "Do I need to buy equipment?", a: "Just a yoga mat and comfortable clothes. Shubham will guide you on anything else needed." },
     ],
@@ -410,7 +410,7 @@ const TESTIMONIALS = {
 // ── SEO ─────────────────────────────────────────────────────────────────────
 function SEOHead({ program }) {
   useEffect(() => {
-    const title = `${program.title} in Haridwar | ${program.subtitle} | Shubh YogShala`;
+    const title = `${program.title} in Bengaluru | ${program.subtitle} | Shubh YogShala`;
     const desc = `${program.heroLine} Led by Shubham Pundir, M.Sc. Yoga. 7+ years experience. Book a free trial on WhatsApp today.`;
     document.title = title;
 
@@ -420,7 +420,7 @@ function SEOHead({ program }) {
       el.content = content;
     };
     setMeta("description", desc);
-    setMeta("keywords", `${program.title}, yoga Haridwar, yoga classes, Shubham Pundir, Shubh YogShala, ${program.subtitle}`);
+    setMeta("keywords", `${program.title}, yoga Bengaluru, yoga classes, Shubham Pundir, Shubh YogShala, ${program.subtitle}`);
     setMeta("og:title", title, "property");
     setMeta("og:description", desc, "property");
     setMeta("og:type", "website", "property");
@@ -437,7 +437,7 @@ function SEOHead({ program }) {
         "@type": "LocalBusiness",
         name: "Shubh YogShala",
         telephone: "+91-8532064201",
-        address: { "@type": "PostalAddress", addressLocality: "Haridwar", addressRegion: "Uttarakhand", addressCountry: "IN" },
+        address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
         sameAs: [
           "https://wa.me/918532064201",
           "https://www.instagram.com/shubh.yogshala?igsh=MTM1eDQ4c2NlNHoyZg%3D%3D&utm_source=qr",
