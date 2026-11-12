@@ -5,7 +5,11 @@ import {
   FaWhatsapp, FaCheckCircle, FaStar, FaClock, FaMapMarkerAlt, FaPhoneAlt,
   FaBaby, FaHeart,
 } from "react-icons/fa";
-
+ 
+// ── Location — single source of truth for every program ────────────────────
+const LOCATION = { city: "Bengaluru", region: "Karnataka", country: "IN" };
+const LOCATION_LABEL = `${LOCATION.city}, ${LOCATION.region}`;
+ 
 // ── WhatsApp — ALL CTAs go here, zero /reglog redirects ────────────────────
 const WA_BASE = "https://wa.me/918532064201?text=";
 const waLink = (program = "") =>
@@ -15,7 +19,7 @@ const waLink = (program = "") =>
       program || "yoga learning"
     } and would like to know more.`
   );
-
+ 
 // ── Programs Data ──────────────────────────────────────────────────────────
 const PROGRAMS = [
   {
@@ -54,7 +58,7 @@ const PROGRAMS = [
     ],
     faqs: [
       { q: "How long is each session?", a: "Sessions are typically 45–60 minutes, depending on your energy and availability." },
-      { q: "Can I do this online?", a: "Yes — personal sessions are available both in-person in Bengaluru, Karnataka and via Zoom/Google Meet." },
+      { q: "Can I do this online?", a: `Yes — personal sessions are available both in-person in ${LOCATION_LABEL} and via Zoom/Google Meet.` },
       { q: "How soon will I see results?", a: "Most students report feeling meaningfully different within 3–4 sessions. Visible physical changes emerge around 4–6 weeks." },
       { q: "Do I need to buy equipment?", a: "Just a yoga mat and comfortable clothes. Shubham will guide you on anything else needed." },
     ],
@@ -68,9 +72,9 @@ const PROGRAMS = [
     icon: <FaLaptop />,
     emoji: "💻",
     tagline: "The shala comes to you.",
-    heroLine: "Professional live yoga instruction — from Shubham's shala directly into your space.",
+    heroLine: `Professional live yoga instruction — from Shubham's shala in ${LOCATION.city} directly into your space.`,
     description: [
-      "Geography is no longer a barrier to authentic yoga practice. Shubham's Online Yoga program brings the full depth of Shubh YogShala — the precision, the warmth, the awareness — into your home, your office, or wherever you are in the world.",
+      `Geography is no longer a barrier to authentic yoga practice. Shubham's Online Yoga program, based in ${LOCATION_LABEL}, brings the full depth of Shubh YogShala — the precision, the warmth, the awareness — into your home, your office, or wherever you are in the world.`,
       "These are not pre-recorded videos. Every session is live, interactive, and personally guided. Shubham watches your form, corrects your breath, and adjusts the practice in real-time — just as he would in person.",
       "Students from across India and internationally have found that online sessions with Shubham are often more focused than in-person classes elsewhere. The one-on-one digital space removes all distractions and creates a surprisingly intimate practice environment.",
     ],
@@ -114,11 +118,11 @@ const PROGRAMS = [
     heroLine: "Structured yoga & wellness programs that measurably reduce workplace stress.",
     description: [
       "The modern workplace demands peak cognitive performance from people whose nervous systems are chronically overstimulated. Corporate Yoga at Shubh YogShala addresses this at the root — not with wellness posters, but with real practice.",
-      "Shubham designs bespoke programs for companies, startups, and offices — delivered on-site or online. Sessions are structured to be accessible for absolute beginners (most employees) while still offering depth for those who already practice.",
+      `Shubham designs bespoke programs for companies, startups, and offices in ${LOCATION_LABEL} — delivered on-site or online. Sessions are structured to be accessible for absolute beginners (most employees) while still offering depth for those who already practice.`,
       "Companies that have engaged Shubh YogShala report reduced sick days, better team morale, improved focus in meetings, and a tangibly calmer office environment.",
     ],
     benefits: [
-      "On-site sessions at your office",
+      `On-site sessions at your office in ${LOCATION.city}`,
       "100% online delivery for distributed teams",
       "Customised programs for desk workers",
       "Chair yoga options for limited mobility",
@@ -158,7 +162,7 @@ const PROGRAMS = [
     description: [
       "Something extraordinary happens when people practise yoga together. The shared breath, the collective stillness, the gentle energy that pushes you just a little further — Group Yoga at Shubh YogShala harnesses all of this, while keeping batches small enough that Shubham can give meaningful individual attention.",
       "Batches are capped at 10 students. This is not a commercial yoga studio with 40 people in a room. Shubham knows each student's body, their progress, their challenges. The group environment provides accountability and community; the small size provides precision and care.",
-      "Morning and evening batches are available. Many students find that group yoga becomes the most consistent, enjoyable part of their daily routine — something they genuinely look forward to.",
+      `Morning and evening batches are available in ${LOCATION_LABEL}. Many students find that group yoga becomes the most consistent, enjoyable part of their daily routine — something they genuinely look forward to.`,
     ],
     benefits: [
       "Capped at 10 students per batch",
@@ -209,7 +213,7 @@ const PROGRAMS = [
       "Works with: back pain, cervical, knee issues, PCOD, anxiety & more",
       "Restorative, gentle progression — never forced",
       "Can be coordinated with your physiotherapist",
-      "Available in-person and online",
+      `Available in-person in ${LOCATION.city} and online`,
     ],
     whoIsItFor: [
       "People with chronic pain or musculoskeletal issues",
@@ -312,7 +316,7 @@ const PROGRAMS = [
     ],
     faqs: [
       { q: "How soon after delivery can I start?", a: "Typically after your doctor's clearance — usually around 6 weeks for natural delivery, longer for C-section. Shubham will guide you." },
-      { q: "Can I bring my baby to sessions?", a: "Yes — in-person sessions are baby-friendly, and online sessions offer the same flexibility from home." },
+      { q: "Can I bring my baby to sessions?", a: `Yes — in-person sessions in ${LOCATION.city} are baby-friendly, and online sessions offer the same flexibility from home.` },
       { q: "Will this help with diastasis recti?", a: "Shubham's core-rebuilding sequences are specifically designed to safely address ab separation." },
       { q: "I feel low and exhausted — can yoga really help?", a: "Many new mothers find postnatal yoga meaningfully improves mood and energy. It's not a replacement for medical care, but a strong complement to it." },
     ],
@@ -363,7 +367,7 @@ const PROGRAMS = [
     lightColor: "#fdf1e6",
   },
 ];
-
+ 
 const TESTIMONIALS = {
   "personal-yoga": [
     { name: "Priya M.", text: "Shubham sees things in your practice that you can't see yourself. Three months in, I feel like a completely different person.", stars: 5 },
@@ -406,28 +410,28 @@ const TESTIMONIALS = {
     { name: "Ravi K. (Parent)", text: "My teenage son was reluctant. Now he credits yoga for helping him through board exam stress. Life-changing.", stars: 5 },
   ],
 };
-
+ 
 // ── SEO ─────────────────────────────────────────────────────────────────────
 function SEOHead({ program }) {
   useEffect(() => {
-    const title = `${program.title} in Bengaluru | ${program.subtitle} | Shubh YogShala`;
-    const desc = `${program.heroLine} Led by Shubham Pundir, M.Sc. Yoga. 7+ years experience. Book a free trial on WhatsApp today.`;
+    const title = `${program.title} in ${LOCATION_LABEL} | ${program.subtitle} | Shubh YogShala`;
+    const desc = `${program.heroLine} Led by Shubham Pundir, M.Sc. Yoga, in ${LOCATION_LABEL}. 7+ years experience. Book a free trial on WhatsApp today.`;
     document.title = title;
-
+ 
     const setMeta = (name, content, attr = "name") => {
       let el = document.querySelector(`meta[${attr}="${name}"]`);
       if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
       el.content = content;
     };
     setMeta("description", desc);
-    setMeta("keywords", `${program.title}, yoga Bengaluru, yoga classes, Shubham Pundir, Shubh YogShala, ${program.subtitle}`);
+    setMeta("keywords", `${program.title}, yoga ${LOCATION.city}, yoga classes ${LOCATION.city}, yoga ${LOCATION.region}, Shubham Pundir, Shubh YogShala, ${program.subtitle}`);
     setMeta("og:title", title, "property");
     setMeta("og:description", desc, "property");
     setMeta("og:type", "website", "property");
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", title);
     setMeta("twitter:description", desc);
-
+ 
     const schema = {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -437,7 +441,7 @@ function SEOHead({ program }) {
         "@type": "LocalBusiness",
         name: "Shubh YogShala",
         telephone: "+91-8532064201",
-        address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressRegion: "Karnataka", addressCountry: "IN" },
+        address: { "@type": "PostalAddress", addressLocality: LOCATION.city, addressRegion: LOCATION.region, addressCountry: LOCATION.country },
         sameAs: [
           "https://wa.me/918532064201",
           "https://www.instagram.com/shubh.yogshala?igsh=MTM1eDQ4c2NlNHoyZg%3D%3D&utm_source=qr",
@@ -445,7 +449,7 @@ function SEOHead({ program }) {
         ],
         email: "pundirshubham487@gmail.com",
       },
-      areaServed: "India",
+      areaServed: { "@type": "City", name: LOCATION.city },
       serviceType: "Yoga Instruction",
       offers: { "@type": "Offer", description: "Free trial class available" },
     };
@@ -455,7 +459,7 @@ function SEOHead({ program }) {
   }, [program]);
   return null;
 }
-
+ 
 // ── FAQ Accordion ────────────────────────────────────────────────────────────
 function FAQ({ faqs, color }) {
   const [open, setOpen] = React.useState(null);
@@ -478,19 +482,19 @@ function FAQ({ faqs, color }) {
     </div>
   );
 }
-
+ 
 // ── Main ─────────────────────────────────────────────────────────────────────
 function YogaPrograms() {
   const { slug } = useParams();
   const active = PROGRAMS.find((p) => p.slug === slug) || PROGRAMS[0];
   const testimonials = TESTIMONIALS[active.slug] || [];
-
+ 
   useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, [slug]);
-
+ 
   return (
     <div className="min-h-screen bg-[#fdf8f2]" style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}>
       <SEOHead program={active} />
-
+ 
       {/* ── HERO ── */}
       <section className="relative pt-20" style={{ backgroundColor: active.color }}>
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)", backgroundSize: "22px 22px" }} />
@@ -502,7 +506,10 @@ function YogaPrograms() {
                 <span className="text-xs tracking-[0.4em] uppercase text-white/60">{active.subtitle} · Shubh YogShala</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-light leading-tight mb-4">{active.title}</h1>
-              <p className="text-white/80 italic text-lg md:text-xl mb-5">"{active.tagline}"</p>
+              <p className="text-white/80 italic text-lg md:text-xl mb-3">"{active.tagline}"</p>
+              <p className="flex items-center gap-2 text-white/70 text-xs tracking-[0.25em] uppercase mb-5">
+                <FaMapMarkerAlt /> {LOCATION_LABEL}
+              </p>
               <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-xl mb-8">{active.heroLine}</p>
               <a href={waLink(active.title)} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-white text-[#3b2a1a] px-8 py-4 text-xs tracking-[0.3em] uppercase font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-xl">
@@ -519,7 +526,7 @@ function YogaPrograms() {
         </div>
         <div className="h-12 bg-[#fdf8f2]" style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }} />
       </section>
-
+ 
       {/* ── STICKY TABS ── */}
       <section className="bg-[#3b2a1a] sticky top-[56px] z-40 shadow-lg">
         <div className="overflow-x-auto" style={{ scrollbarWidth: "none" }}>
@@ -537,7 +544,7 @@ function YogaPrograms() {
           </div>
         </div>
       </section>
-
+ 
       {/* ── ABOUT ── */}
       <section className="max-w-6xl mx-auto px-6 md:px-14 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
@@ -557,10 +564,13 @@ function YogaPrograms() {
                 <p className="text-[#3b2a1a] font-semibold text-sm">Shubham Pundir</p>
                 <p className="text-[#7a6352] text-xs mt-0.5">M.A. Yoga Science · 7+ Years Teaching</p>
                 <p className="text-xs mt-1" style={{ color: active.color }}>Lead Instructor — {active.title}</p>
+                <p className="text-[#7a6352] text-xs mt-1 flex items-center gap-1">
+                  <FaMapMarkerAlt style={{ color: active.color }} /> {LOCATION_LABEL}
+                </p>
               </div>
             </div>
           </div>
-
+ 
           <div>
             <div className="bg-white border border-[#e8d5c0] rounded-3xl p-8 shadow-sm">
               <h3 className="text-[#3b2a1a] text-lg font-semibold mb-6 flex items-center gap-2">
@@ -585,7 +595,7 @@ function YogaPrograms() {
             <div className="mt-5 grid grid-cols-2 gap-3">
               {[
                 { icon: <FaClock />, label: "Flexible Timing" },
-                { icon: <FaMapMarkerAlt />, label: "Online & In-Person" },
+                { icon: <FaMapMarkerAlt />, label: LOCATION_LABEL },
                 { icon: <FaStar />, label: "5★ Rated Program" },
                 { icon: <FaPhoneAlt />, label: "Free Consultation" },
               ].map((item, i) => (
@@ -598,7 +608,7 @@ function YogaPrograms() {
           </div>
         </div>
       </section>
-
+ 
       {/* ── WHO IS IT FOR ── */}
       <section style={{ backgroundColor: active.lightColor }} className="py-20 px-6 md:px-14">
         <div className="max-w-5xl mx-auto">
@@ -625,7 +635,7 @@ function YogaPrograms() {
           </div>
         </div>
       </section>
-
+ 
       {/* ── HOW IT WORKS ── */}
       <section className="py-20 px-6 md:px-14 bg-[#fdf8f2]">
         <div className="max-w-5xl mx-auto">
@@ -648,7 +658,7 @@ function YogaPrograms() {
           </div>
         </div>
       </section>
-
+ 
       {/* ── TESTIMONIALS ── */}
       <section className="py-20 px-6 md:px-14 bg-[#3b2a1a]">
         <div className="max-w-5xl mx-auto">
@@ -671,7 +681,7 @@ function YogaPrograms() {
           </div>
         </div>
       </section>
-
+ 
       {/* ── FAQ ── */}
       <section className="py-20 px-6 md:px-14 bg-[#fdf8f2]">
         <div className="max-w-3xl mx-auto">
@@ -684,7 +694,7 @@ function YogaPrograms() {
           <FAQ faqs={active.faqs} color={active.color} />
         </div>
       </section>
-
+ 
       {/* ── FINAL CTA ── */}
       <section className="py-24 px-6 text-center relative overflow-hidden" style={{ backgroundColor: active.color }}>
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
@@ -703,10 +713,10 @@ function YogaPrograms() {
             <FaWhatsapp className="text-[#25D366] text-xl" />
             Message Shubham on WhatsApp
           </a>
-          <p className="mt-5 text-white/40 text-xs">+91 85320 64201 · Free trial · No commitment</p>
+          <p className="mt-5 text-white/40 text-xs">+91 85320 64201 · {LOCATION_LABEL} · Free trial · No commitment</p>
         </div>
       </section>
-
+ 
       {/* ── OTHER PROGRAMS ── */}
       <section className="py-20 px-6 md:px-14 bg-[#fdf8f2]">
         <div className="max-w-5xl mx-auto">
@@ -730,5 +740,7 @@ function YogaPrograms() {
     </div>
   );
 }
-
+ 
 export default YogaPrograms;
+ 
+
